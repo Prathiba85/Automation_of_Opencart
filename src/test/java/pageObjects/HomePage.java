@@ -5,25 +5,39 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
+	
 
 	public HomePage(WebDriver driver) {
 		super(driver);
+		// TODO Auto-generated constructor stub
 	}
+
 	// Elements
-		@FindBy(xpath = "//span[text()='My Account']")
-		WebElement lnkMyaccount;
+	@FindBy(xpath = "//span[text()='My Account']")
+	WebElement lnkMyaccount;
 
-		@FindBy(linkText = "Register")
-		WebElement lnkRegister;
+	@FindBy(linkText = "Register")
+	WebElement lnkRegister;
 
-		// Action Methods
-		public void clickMyAccount() {
-			lnkMyaccount.click();
-		}
-
-		public void clickRegister() {
-			lnkRegister.click();
-		}
+	@FindBy(linkText = "Login")   // Login link added in step6
+	WebElement linkLogin;
+	
 		
+	// Action Methods
+	public void clickMyAccount() {
+		lnkMyaccount.click();
+	}
 
+	public void clickRegister() {
+		lnkRegister.click();
+	}
+	
+	public void clickLogin()    // added in step6
+	{
+		linkLogin.click();
+	}
+	
+	
+	
 }
+

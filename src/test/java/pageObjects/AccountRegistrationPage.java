@@ -8,71 +8,102 @@ public class AccountRegistrationPage extends BasePage {
 
 	public AccountRegistrationPage(WebDriver driver) {
 		super(driver);
-	
-	}
-	
-	//Elements
-	@FindBy(xpath="//input[@name='firstname']")WebElement txt_firstname;
-	@FindBy(xpath="//input[@name='lastname']")WebElement txt_lastname;
-	@FindBy(xpath="//input[@name='email']")WebElement txt_email;
-
-
-	@FindBy(name = "telephone")WebElement txtTelephone;
-	@FindBy(xpath="//input[@name='password']")WebElement txt_password;
-	@FindBy(name = "confirm")WebElement txtConfirmPassword;
-
-
-	@FindBy(xpath="//input[@name='agree']")WebElement chk_agree;
-	@FindBy(xpath="//input[@value='Continue']")WebElement btn_continue;
-	@FindBy(xpath="//h1[normalize-space()='Your Account Has Been Created!']")WebElement msgConfirmation;
-	
-	//Action Methods
-	public void setFirstName(String fname)
-	{
-		txt_firstname.sendKeys(fname);
-	}
-	public void setLastName(String lname)
-	{
-		txt_lastname.sendKeys(lname);
-	}
-	public void setEmail(String email)
-	{
-		txt_email.sendKeys(email);
-	}
-	public void setTelephone(String tel) {
-		txtTelephone.sendKeys(tel);
-
 	}
 
-	public void setPassword(String password)
-	{
-		txt_password.sendKeys(password);
-	}
-	public void setConfirmPassword(String pwd) {
-		txtConfirmPassword.sendKeys(pwd);
+	// Elements
+		@FindBy(name = "firstname")
+		WebElement txtFirstname;
 
-	}
+		@FindBy(name = "lastname")
+		WebElement txtLasttname;
 
-	public void checkAgree ()
-	{
-		chk_agree.click();
-	}
-	
-	public void clickContinue()
-	{
-		btn_continue.click();
-	}
-	
-	public String getConfirmationMsg()
-	{
-		try {
-			return msgConfirmation.getText() ;
-		}catch(Exception e)
-		{
-			return (e.getMessage());
+		@FindBy(name = "email")
+		WebElement txtEmail;
+
+		@FindBy(name = "telephone")
+		WebElement txtTelephone;
+
+		@FindBy(name = "password")
+		WebElement txtPassword;
+
+		@FindBy(name = "confirm")
+		WebElement txtConfirmPassword;
+
+		@FindBy(name = "agree")
+		WebElement chkdPolicy;
+
+		@FindBy(xpath = "//input[@value='Continue']")
+		WebElement btnContinue;
+
+		@FindBy(xpath = "//h1[normalize-space()='Your Account Has Been Created!']")
+		WebElement msgConfirmation;
+
+		public void setFirstName(String fname) {
+			txtFirstname.sendKeys(fname);
+
 		}
-	
-		
-	}
 
+		public void setLastName(String lname) {
+			txtLasttname.sendKeys(lname);
+
+		}
+
+		public void setEmail(String email) {
+			txtEmail.sendKeys(email);
+
+		}
+
+		public void setTelephone(String tel) {
+			txtTelephone.sendKeys(tel);
+
+		}
+
+		public void setPassword(String pwd) {
+			txtPassword.sendKeys(pwd);
+
+		}
+
+		public void setConfirmPassword(String pwd) {
+			txtConfirmPassword.sendKeys(pwd);
+
+		}
+
+		public void setPrivacyPolicy() {
+			chkdPolicy.click();
+
+		}
+
+		public void clickContinue() {
+			//sol1 
+			btnContinue.click();
+			
+			//sol2 
+			//btnContinue.submit();
+			
+			//sol3
+			//Actions act=new Actions(driver);
+			//act.moveToElement(btnContinue).click().perform();
+						
+			//sol4
+			//JavascriptExecutor js=(JavascriptExecutor)driver;
+			//js.executeScript("arguments[0].click();", btnContinue);
+			
+			//Sol 5
+			//btnContinue.sendKeys(Keys.RETURN);
+			
+			//Sol6  
+			//WebDriverWait mywait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			//mywait.until(ExpectedConditions.elementToBeClickable(btnContinue)).click();
+			
+		}
+
+		public String getConfirmationMsg() {
+			try {
+				return (msgConfirmation.getText());
+			} catch (Exception e) {
+				return (e.getMessage());
+
+			}
+
+		}
 }

@@ -20,7 +20,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import testBase.BaseClass;
 
-public class ExtentReportManger implements ITestListener {
+public class ExtentReportManager implements ITestListener {
 	public ExtentSparkReporter sparkReporter;
 	public ExtentReports extent;
 	public ExtentTest test;
@@ -74,7 +74,7 @@ public class ExtentReportManger implements ITestListener {
 	public void onFinish(ITestContext testContext) {
 		extent.flush();
 
-		/* In real time you have to change - SMT , port de
+		/*
 		 * try { URL url = new
 		 * URL("file:///"+System.getProperty("user.dir")+"\\reports\\"+repName);
 		 * 
@@ -83,7 +83,7 @@ public class ExtentReportManger implements ITestListener {
 		 * email.setDataSourceResolver(new DataSourceUrlResolver(url));
 		 * email.setHostName("smtp.googlemail.com"); 
 		 * email.setSmtpPort(465);
-		 * email.setAuthenticator(new DefaultAuthenticator("sanprathi@gmail.com","chifley08")); 
+		 * email.setAuthenticator(new DefaultAuthenticator("pavanoltraining@gmail.com","password")); 
 		 * email.setSSLOnConnect(true);
 		 * email.setFrom("pavanoltraining@gmail.com"); //Sender
 		 * email.setSubject("Test Results");
