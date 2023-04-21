@@ -7,7 +7,7 @@ import pageObjects.HomePage;
 import testBase.BaseClass;
 
 public class TC_001_AccountRegistrationTest extends BaseClass{
-	@Test
+	@Test ( groups = {"Regression","Master"})
 	public void test_account_Registration() throws InterruptedException
 	{
 		logger.debug("application logs......");
@@ -46,7 +46,8 @@ public class TC_001_AccountRegistrationTest extends BaseClass{
 		
 		logger.info("Validating expected message");
 		Assert.assertEquals(confmsg, "Your Account Has Been Created!","Test failed");
-		
+		//Intentionally failed
+		//Assert.assertEquals(confmsg, "Your Account Been Created!","Test failed");
 		}catch(Exception e)
 		{
 			logger.error("test failed");

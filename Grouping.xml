@@ -4,15 +4,25 @@
 <suite name="Suite">
   
   <listeners>
-		<listener class-name="utilities.ExtentReportManager" />
+	<listener class-name="utilities.ExtentReportManager" />
 	</listeners>
 	
   <test name="Test">
     <parameter name="browser" value="chrome" />    <!-- passing browser parameter to BaseClass ->Setup() -->
+  <groups>
+	  <run>
+		  <!--include name="Master"></include>-->
+		  <include name="Sanity"></include>
+		  	  <!--include name="Regression"></include>-->
+		  	  <!--exclude name="Master"></exclude>-->
+		  	  <!--exclude name="Sanity"></exclude>-->
+		  	  <!--exclude name="Regression"></exclude>-->
+	  </run>
+  </groups>
     <classes>
    	    <class name="testCases.TC_001_AccountRegistrationTest"/> 
    	      <class name="testCases.TC_002_LoginTest"/> 
-   	      <!--class name="testCases.TC_003_LoginDataDrivenTest"/>-->
+   	     
    	     
     </classes>
   </test> 
