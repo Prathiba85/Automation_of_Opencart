@@ -33,6 +33,7 @@ public class TC_001_AccountRegistrationTest extends BaseClass{
 		
 		regpage.setTelephone(randomeNumber());
 		
+		
 		String password=randomAlphaNumeric();
 		regpage.setPassword(password);
 		regpage.setConfirmPassword(password);
@@ -53,7 +54,8 @@ public class TC_001_AccountRegistrationTest extends BaseClass{
 			logger.error("test failed");
 			Assert.fail();
 		}
-		logger.info("***  Finished TC_001_AccountRegistrationTest ***");		
+		logger.info("***  Finished TC_001_AccountRegistrationTest ***");	
+		System.out.println();
 		}
 	
 	
