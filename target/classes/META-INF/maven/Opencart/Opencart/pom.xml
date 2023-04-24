@@ -4,23 +4,28 @@
 	<artifactId>Opencart</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.0.0</version>
-          <configuration>
-			  <suiteXmlFiles>
-				  <suiteXmlFile>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>3.0.0</version>
+					<configuration>
+						<suiteXmlFiles>
+							<suiteXmlFile>
 			  Master.testng.xml
 		  </suiteXmlFile>
-		  </suiteXmlFiles>
-		  </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
+						</suiteXmlFiles>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.10.1</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -84,6 +89,5 @@
 			<artifactId>extentreports</artifactId>
 			<version>5.0.9</version>
 		</dependency>
-		
 	</dependencies>
 </project>
